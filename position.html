@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      function displayCurrentPosition() {
+        navigator.geolocation.getCurrentPosition(function (position) {
+          document.write("latitude:" + position.coords.latitude);
+          document.write("longitude:" + position.coords.longitude);
+        });
+      }
+    </script>
+  </head>
+  <body>
+    <button onclick="displayCurrentPosition()">Get Current Position</button>
+  </body>
+</html>

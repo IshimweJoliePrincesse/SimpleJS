@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      function reverseGeocode(lat, lon) {
+        fetch(
+          `https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${lat}&lon=${lon}`
+        )
+          .then((response) => response.json())
+          .then((data) => document.write("location:" + data.display_name))
+          .catch((Error) => console.error("Error fecthing location:", error));
+      }
+      reverseGeocode(-1.6020608, 29.5158661);
+    </script>
+
+    <button onmouseenter="reverseGeocode()">Get Current Position</button>
+  </head>
+</html>
